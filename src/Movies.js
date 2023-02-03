@@ -6,6 +6,7 @@ const url =
 
 const Movies = () => {
   const { movies, isLoading } = useGlobalContext();
+
   if (isLoading) {
     return <div className="loading"></div>;
   }
@@ -13,6 +14,7 @@ const Movies = () => {
     <section className="movies">
       {movies.map((movie) => {
         const { imdbID: id, Poster: poster, Title: title, Year: year } = movie;
+
         return (
           <Link to={`/movies/${id}`} key={id} className="movie">
             <article>
